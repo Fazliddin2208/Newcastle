@@ -7,10 +7,24 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
+    "@fortawesome/free-regular-svg-icons": "^6.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "@mui/material": "^5.5.1",
+    "chart.js": "^3.7.1",
     "core-js": "^3.8.3",
+    "materialize-css": "^1.0.0-rc.2",
     "register-service-worker": "^1.7.2",
+    "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.13",
+    "vue-chart-3": "^3.1.8",
+    "vue-chartjs": "^4.0.1",
+    "vue-material-design-icons": "^5.0.0",
     "vue-router": "^4.0.3",
+    "vue-sidebar-menu-akahon": "^0.1.4",
+    "vue3-charts": "^1.1.31",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
