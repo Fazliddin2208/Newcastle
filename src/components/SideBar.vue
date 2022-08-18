@@ -5,11 +5,7 @@
         <img src="../assets/images/logo.png" alt="logo" />
         <h3>NewCastle</h3>
       </div>
-      <div class="show-hide">
-        <a href="#" @click.prevent="$emit('click')"
-          ><i class="fa fa-angle-left show-icon"></i
-        ></a>
-      </div>
+      
     </div>
 
     <div class="menu">
@@ -85,8 +81,8 @@
             :class="{ 'bolasi-bor': item.exact }"
             :to="item.url"
           >
-            <i :class="item.icon"></i>
-            {{ item.label }}
+            <i :class="item.icon" class="my-icon"></i>
+            <span>{{ item.label }}</span>
             <i
               v-if="data"
               class="fa fa-angle-right"
@@ -95,6 +91,7 @@
           </router-link>
           <ul
             v-if="statusSublinks"
+            class="my-sub-link"
           >
             <li
               class="sub-link"
@@ -138,7 +135,7 @@ export default {
         {
           label: "O'quvchilar",
           icon: "fa fa-graduation-cap",
-          url: "/",
+          url: "",
           exact: true,
           children: [
             { label: "Ro'yxat", url: "/list" },
@@ -215,14 +212,16 @@ $main-color: #696cff;
 .menu-link {
   &.active {
     & > a {
-      background: red;
+      background: #696cff;
+      border: 1px solid #696cff;
+      width: 100% !important;
     }
   }
   ul {
     li {
       a {
         &.router-link-active {
-          background: red;
+          background: #696cff;
         }
       }
     }
@@ -258,9 +257,28 @@ $main-color: #696cff;
     opacity: 1;
     // display: inline-block;
   }
-  &:hover .menu a {
-    width: 17.5vw;
+  &:hover .menu{
+    width: 20vw;
+  }
+  &:hover .menu ul li{
+    // display: flex;
+    width: calc(20vw - 20px);
+    // flex-direction: row;
+  }
+  &:hover .menu ul li a{
+    text-align: left;
+    margin-left: 20px;
+    .my-icon{
+      font-size: 20px;
+      width: 50px;
+    }
+  }
+  &:hover .menu span {
+    // width: 20vw;
     font-size: 15px;
+    transition: 1s all ease;
+    opacity: 1;
+    display: inline-block;
   }
   &:hover .help span {
     opacity: 1;
@@ -327,19 +345,33 @@ $main-color: #696cff;
   .menu {
     position: fixed;
     top: 35%;
-    width: 20vw;
+    width: 5vw;
     left: 0;
-    // border: 1px solid black;
+    transition: 1s all ease;
     ul {
       list-style-type: none;
-      border: 1px solid white;
+      transition: 1s all ease;
       li {
-        border: 1px solid red;
+        transition: 1s all ease;
+        // display: flex;
+        // flex-direction: row;
         a {
-          border: 1px solid black;
           display: block;
+          text-align: center;
           width: 100%;
+          transition: 1s all ease;
+          color: white;
+          margin-top: 5px;
+          span{
+            opacity: 1;
+            display: none;
+            font-size: 20px !important;
+          }
+          .my-icon{
+            font-size: 30px;
+          }
         }
+        
       }
       // .li{
       //     margin-bottom: 5px;

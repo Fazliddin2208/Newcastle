@@ -74,10 +74,10 @@
 <style lang="scss" scoped>
 @import '~materialize-css/dist/css/materialize.min.css';
 .my-navbar{
-    width: 60vw;
+    width: 85vw;
     margin-top: 50px;
     .menu{
-        width: 60vw;
+        width: 85vw;
         background-color: #fff;
         height: 50px;
         padding: 0;
@@ -97,7 +97,7 @@
                 height: 100%;
                 color: #97A2B0;
                 font-weight: 900;
-                padding-left: 30px;
+                padding-left: 40px;
                 border: none;
                 transition: 0.2s all ease;
                 &::placeholder{

@@ -1,90 +1,24 @@
-<!-- Use preprocessors via the lang attribute! e.g. <template lang="pug"> -->
 <template>
-     
-  <v-date-picker class="inline-block h-full" v-model="selectedDate">
-    
-    <template v-slot="{ inputValue, togglePopover }">
-      <div class="flex items-center">
-        <button
-          class="p-2 bg-blue-100 border border-blue-200 hover:bg-blue-200 text-blue-600 rounded-l focus:bg-blue-500 focus:text-white focus:border-blue-500 focus:outline-none"
-          @click="togglePopover()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            class="w-4 h-4 fill-current"
-          >
-            <path
-              d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z"
-            ></path>
-          </svg>
-        </button>
-        <input
-          :value="displayDate(inputValue)"
-          class="bg-white text-gray-700 w-full py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
-          readonly
-             @click="togglePopover()"
-        />
-      </div>
-    </template>
-  </v-date-picker>
-    <p>
-           {{selectedDate}}
-  </p>
-
-    <p>
-      Learn more with the
-      <a
-        href="https://vuejs.org/"
-        target="_blank"
-        rel="noopener"
-      >Vue Docs &amp; Resources</a>.
-    </p>
-   
-    <button @click="doSomething">Say hello.</button>
+    <Datepicker v-model="date" range />
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
+
 export default {
-  data() {
-    return {
-        selectedDate: null,
-      message: 'Welcome to Vue!'
-    };
-  },
-  methods: {
-        formatYear(year, buddhistYear) {
-      return buddhistYear ? +year + 543 : year;
-    },
-    displayDate(v){
-      return v+"Xxx"
-    },
-    doSomething() {
-      alert('Hello!');
+    setup() {
+        const date = ref();
+
+        // For demo purposes assign range from the current date
+        onMounted(() => {
+            const startDate = new Date();
+            const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
+            date.value = [startDate, endDate];
+        })
+        
+        return {
+            date,
+        }
     }
-  }
-};
+}
 </script>
-
-<!-- Use preprocessors via the lang attribute! e.g. <style lang="scss"> -->
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-a,
-button {
-  color: #4fc08d;
-}
-
-button {
-  background: none;
-  border: solid 1px;
-  border-radius: 2em;
-  font: inherit;
-  padding: 0.75em 2em;
-}
-</style>

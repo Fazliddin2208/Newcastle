@@ -137,9 +137,10 @@
 hr{
     color: #A3A3A3;
     margin: 35px 0;
-    width: 60vw;
+    width: 85vw;
     margin-left: -30px;
     opacity: 0.2;
+    z-index: 0;
 }
 .my-site{
     height: auto;

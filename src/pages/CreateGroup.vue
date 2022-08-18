@@ -88,7 +88,9 @@
                 color: #7A8A9A;
                 border-radius: 5px;
                 height: 30px;
+                display: block;
                 padding-left: 10px;
+                width: 99%;
                 &:focus{
                     border: 1.5px solid #CCCCCC !important;
                     border-bottom: 1.5px solid #CCCCCC;

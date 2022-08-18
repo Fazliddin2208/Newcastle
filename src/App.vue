@@ -44,8 +44,8 @@ export default {
 
 #container{
   background-color: #E5E5E5;
-  border: 1px solid #2c3e50;
-  margin-top: -60px;
+  border: 1px solid #E5E5E5;
+  // margin-top: -60px;
   // height: auto;
   display: block;
 }

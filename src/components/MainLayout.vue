@@ -32,20 +32,21 @@
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 5;
 }
 .navbar{
     position: sticky;
-    width: 60vw;
-    left: 22vw;
+    width: 85vw;
+    left: 9.5vw;
     top: 10px;
-    z-index: 2;
+    z-index: 0;
 }
 .content{
-    position:relative;
-    left: 22vw;
-    width: 60vw;
+    // position:sticky;
+    margin-left: 9.5vw;
+    width: 85vw;
     min-height: 100vh;
-    top:50px;
+    margin-top: 50px;
     padding: 5px 5px;
     margin-bottom: 70px;
     z-index: 0;

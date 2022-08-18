@@ -55,8 +55,8 @@ label{
   height: 0px;
 }
 .cover{
-  width: 100vw;
-  height: 100vh;
+  width: 100vw !important;
+  height: 100vh !important;
   // border: 2px solid black;
   background-color: #233446;
   display: flex;
@@ -64,7 +64,7 @@ label{
   align-content: center;
   align-items: center;
   position: fixed;
-  z-index: 5;
+  z-index: 50;
   left: 0;
   top: 0;
   .content{
